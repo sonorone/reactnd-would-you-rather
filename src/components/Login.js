@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import Message from './Message';
 import TwoRowsInputForm from './TwoRowsInputForm';
 import { setAuthedUser } from '../actions/authedUser';
 
@@ -18,7 +19,7 @@ class Login extends React.Component {
     const { login, password } = this.state;
     return (
       <form className='App-header'>
-        {/* TODO */}
+        <Message text='Sign in to WWR' />
         <TwoRowsInputForm optionOne={login} optionTwo={password} />
         <Button text='Login' handleClick={this.handleLogin} />
       </form>

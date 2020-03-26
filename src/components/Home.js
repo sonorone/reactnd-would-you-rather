@@ -7,7 +7,7 @@ import { getData } from '../actions/shared';
 
 class Home extends React.Component {
   state = {
-    filter: 'Answered'
+    filter: 'Unanswered'
   };
 
   componentDidMount() {

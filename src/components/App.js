@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Nav from './Nav';
-import Login from './Login';
+// import Login from './Login';
 import Home from './Home';
 import { connect } from 'react-redux';
 
@@ -11,7 +11,8 @@ class App extends Component {
       <div className='App'>
         <div className='App-header'>
           <Nav />
-          {this.props.authedUser === null ? <Login /> : <Home />}
+          <Home />
+          {/* {this.props.authedUser === null ? <Login /> : <Home />} */}
         </div>
       </div>
     );

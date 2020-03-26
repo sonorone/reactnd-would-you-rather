@@ -1,15 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import OpenCard from './OpenedCard';
 
 const UnansweredList = (props) => {
-  const { questions } = props;
+  const { questions, users } = props;
 
   return (
     <React.Fragment>
-      <ul>
+      <ul style={{ listStyle: 'none' }}>
         {questions.map((e) => (
           <li key={e.id}>
-            {e.optionOne.text} {e.optionTwo.text}
+            <OpenCard
+              className='open-card'
+              avatarURL={users[e.author].avatarURL}
+              optionOne={e.optionOne.text}
+              optionTwo={e.optionTwo.text}
+            />
           </li>
         ))}
       </ul>

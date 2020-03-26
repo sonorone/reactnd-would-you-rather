@@ -1,0 +1,31 @@
+.card {
+  overflow: display;
+  justify-content: center;
+}
+
+.card-shell {
+  margin: 40px;
+  height: 100%;
+  width: 400px;
+  display: flex;
+  padding: 40px;
+  background-color: white;
+  border: 1px solid rgb(212, 212, 212);
+}
+.option {
+  width: 50%;
+}
+.face {
+  width: 80px;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+img {
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  background-color: rgb(208, 205, 211);
+  bottom: -40px;
+  border: 4px solid rgb(202, 202, 202);
+}
