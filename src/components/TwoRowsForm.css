@@ -1,0 +1,39 @@
+.form-row {
+  background-color: white;
+  border: 1px solid black;
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .form-row {
+    min-width: 300px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* tablets and desktop */
+  .form-row {
+    min-width: 480px;
+  }
+}
+
+input {
+  border: none;
+  border-bottom: 0.2rem solid;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 70%;
+}
+
+input:focus {
+  border-bottom: 0.2rem solid;
+  border-color: rgb(150, 185, 224);
+}
+
+.optionTwo {
+  border-top: 1px solid black;
+}

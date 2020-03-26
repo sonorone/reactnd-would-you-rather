@@ -1,0 +1,26 @@
+body {
+  font-family: sans-serif;
+}
+
+.filterTab input[type] {
+  display: none;
+}
+
+.filterTab label {
+  border: 1px solid #dee7f0;
+  margin-right: 5px;
+  margin-top: calc(15px + 2vmin);
+  margin-bottom: calc(15px + 2vmin);
+  border-radius: 8px;
+  padding: 10px 25px;
+  display: block;
+  float: left;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.filterTab label:hover,
+.filterTab input:checked + label {
+  border: 1px solid #3e80bd;
+  color: #3e80bd;
+}
