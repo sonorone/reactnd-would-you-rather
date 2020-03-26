@@ -7,12 +7,12 @@ const UnansweredList = (props) => {
 
   return (
     <React.Fragment>
-      <ul style={{ listStyle: 'none' }}>
+      <ul style={{ listStyleType: 'none', paddingInlineStart: '0px' }}>
         {questions.map((e) => (
           <li key={e.id}>
             <OpenCard
               className='open-card'
-              avatarURL={users[e.author].avatarURL}
+              author={users[e.author]}
               optionOne={e.optionOne.text}
               optionTwo={e.optionTwo.text}
             />

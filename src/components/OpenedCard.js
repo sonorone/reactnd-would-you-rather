@@ -4,16 +4,19 @@ import './OpenCard.css';
 function OpenCard(props) {
   return (
     <div className='card'>
-      <div className='face'>
-        <img
-          alt='avatar'
-          style={{ height: '50px', width: '50px' }}
-          src={props.avatarURL}
-        ></img>
-      </div>
       <div className='card-shell'>
         <div className='option'>{props.optionOne}</div>
         <div className='option'>{props.optionTwo}</div>
+      </div>
+      <div classname='footer'>
+        <h6>Asked by {props.author.name}</h6>
+      </div>
+      <div className='face'>
+        <img
+          alt='avatar'
+          style={{ height: '60px', width: '60px' }}
+          src={props.author.avatarURL}
+        ></img>
       </div>
     </div>
   );
