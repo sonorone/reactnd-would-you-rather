@@ -1,0 +1,22 @@
+.button-shell {
+  border-left: 22px solid rgb(150, 185, 224);
+  /* padding: 0rem 8rem; */
+  text-align: center;
+  margin: 20px;
+  color: white;
+  background-color: rgb(47, 47, 48);
+  /* width: 8rem; */
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .button-shell {
+    min-width: 280px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* tablets and desktop */
+  .button-shell {
+    min-width: 460px;
+  }
+}
