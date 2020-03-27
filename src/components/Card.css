@@ -16,6 +16,11 @@
 }
 .option {
   width: 50%;
+  margin: 30px;
+}
+.selected {
+  text-decoration: none;
+  border-bottom: 10px solid rgb(77, 70, 70);
 }
 .face {
   width: 50px;

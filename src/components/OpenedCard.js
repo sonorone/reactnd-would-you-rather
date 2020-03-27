@@ -1,25 +1,40 @@
 import React from 'react';
-import './OpenCard.css';
+import './Card.css';
 
-function OpenCard(props) {
+function OpenedCard(props) {
+  const {
+    author,
+    optionOne,
+    optionTwo,
+    selected,
+    optionOneVotes,
+    optionTwoVotes
+  } = props;
+
   return (
     <div className='card'>
       <div className='card-shell'>
-        <div className='option'>{props.optionOne}</div>
-        <div className='option'>{props.optionTwo}</div>
+        <div className={`option ${selected === 'optionOne' ? 'selected' : ''}`}>
+          {optionOne}
+          <div>Votes: {optionOneVotes}</div>
+        </div>
+        <div className={`option ${selected === 'optionTwo' ? 'selected' : ''}`}>
+          {optionTwo}
+          <div>Votes: {optionTwoVotes} / </div>
+        </div>
       </div>
-      <div classname='footer'>
-        <h6>Asked by {props.author.name}</h6>
+      <div className='footer'>
+        <h6>Asked by {author.name}</h6>
       </div>
       <div className='face'>
         <img
           alt='avatar'
           style={{ height: '60px', width: '60px' }}
-          src={props.author.avatarURL}
+          src={author.avatarURL}
         ></img>
       </div>
     </div>
   );
 }
 
-export default OpenCard;
+export default OpenedCard;

@@ -6,7 +6,7 @@ import { getInitialData } from '../utils/api';
 export function getData() {
   return (dispatch) => {
     getInitialData().then(({ users, questions }) => {
-      dispatch(setAuthedUser('dmurawiecki'));
+      dispatch(setAuthedUser('kharo'));
       dispatch(receiveUsers(users));
       dispatch(getQuestions(questions));
     });

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import OpenCard from './OpenedCard';
+import ClosedCard from './ClosedCard';
 
 const UnansweredList = (props) => {
   const { questions, users } = props;
@@ -10,7 +10,7 @@ const UnansweredList = (props) => {
       <ul style={{ listStyleType: 'none', paddingInlineStart: '0px' }}>
         {questions.map((e) => (
           <li key={e.id}>
-            <OpenCard
+            <ClosedCard
               className='open-card'
               author={users[e.author]}
               optionOne={e.optionOne.text}
@@ -28,9 +28,9 @@ function mapStateToProps({ authedUser, users, questions }) {
   const answers = user ? users[user.id].answers : null;
   const unansweredQuestions = [];
 
-  for (const prop of Object.keys(questions)) {
-    if (!Object.keys(answers).includes(questions[prop].id)) {
-      unansweredQuestions.push(questions[prop]);
+  for (const id of Object.keys(questions)) {
+    if (!Object.keys(answers).includes(id)) {
+      unansweredQuestions.push(questions[id]);
     }
   }
 

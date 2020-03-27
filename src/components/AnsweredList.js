@@ -1,15 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import OpenedCard from './OpenedCard';
 
 const AnsweredList = (props) => {
-  const { questions } = props;
+  const { questions, users, authedUser } = props;
 
   return (
     <React.Fragment>
-      <ul>
+      <ul style={{ listStyleType: 'none', paddingInlineStart: '0px' }}>
         {questions.map((e) => (
-          <li key={e.id}>
-            {e.optionOne.text} {e.optionTwo.text}
+          <li key={e.id} id={e.id}>
+            <OpenedCard
+              className='open-card'
+              author={users[e.author]}
+              selected={users[authedUser].answers[e.id]}
+              optionOne={e.optionOne.text}
+              optionOneVotes={e.optionOne.votes.length}
+              optionTwo={e.optionTwo.text}
+              optionTwoVotes={e.optionTwo.votes.length}
+            />
           </li>
         ))}
       </ul>
@@ -21,17 +30,19 @@ function mapStateToProps({ authedUser, users, questions }) {
   const user = users[authedUser];
   const answers = user ? users[user.id].answers : null;
   const answeredQuestions = [];
-  const profiles = [];
+  const profiles = {};
 
-  for (const prop of Object.keys(questions)) {
-    if (Object.keys(answers).includes(questions[prop].id)) {
-      answeredQuestions.push(questions[prop]);
-      profiles.push(users[questions[prop].author]);
+  for (const id of Object.keys(questions)) {
+    if (Object.keys(answers).includes(id)) {
+      answeredQuestions.push(questions[id]);
+      // profiles.push(users[questions[id].author]);
+      profiles[questions[id].author] = users[questions[id].author];
     }
   }
 
   return {
-    profiles,
+    authedUser,
+    users: profiles,
     questions: answeredQuestions
   };
 }
