@@ -5,12 +5,14 @@ function ClosedCard(props) {
   const { author, optionOne, optionTwo } = props;
   return (
     <div className='card'>
+      <div className='title'>Would you rather...</div>
       <div className='card-shell'>
-        <div className='option'>{optionOne}</div>
+        <div className='option border'>{optionOne}</div>
         <div className='option'>{optionTwo}</div>
       </div>
       <div className='footer'>
-        <h6>Asked by {author.name}</h6>
+        <div className='poll-results'></div>
+        <div className='author'>Asked by {author.name}</div>
       </div>
       <div className='face'>
         <img

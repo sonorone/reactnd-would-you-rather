@@ -35,7 +35,6 @@ function mapStateToProps({ authedUser, users, questions }) {
   for (const id of Object.keys(questions)) {
     if (Object.keys(answers).includes(id)) {
       answeredQuestions.push(questions[id]);
-      // profiles.push(users[questions[id].author]);
       profiles[questions[id].author] = users[questions[id].author];
     }
   }

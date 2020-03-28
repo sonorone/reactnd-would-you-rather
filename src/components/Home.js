@@ -7,7 +7,7 @@ import { getData } from '../actions/shared';
 
 class Home extends React.Component {
   state = {
-    filter: 'Answered'
+    filter: 'Unanswered'
   };
 
   componentDidMount() {
@@ -25,8 +25,7 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         <Filter handleOption={this.handleOptionChange} filter={filter} />
-        {filter === 'Unanswered' && <UnansweredList />}
-        {filter === 'Answered' && <AnsweredList />}
+        {filter === 'Unanswered' ? <UnansweredList /> : <AnsweredList />}
       </React.Fragment>
     );
   }
