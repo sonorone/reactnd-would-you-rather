@@ -3,16 +3,16 @@ import { connect } from 'react-redux';
 import Filter from './Filter';
 import UnansweredList from './UnansweredList';
 import AnsweredList from './AnsweredList';
-import { getData } from '../actions/shared';
+// import { getData } from '../actions/shared';
 
 class Home extends React.Component {
   state = {
     filter: 'Unanswered'
   };
 
-  componentDidMount() {
-    this.props.dispatch(getData());
-  }
+  // componentDidMount() {
+  //   this.props.dispatch(getData());
+  // }
 
   handleOptionChange = (e) => {
     this.setState({

@@ -1,11 +1,11 @@
 import React from 'react';
-import Avatar from 'avataaars';
+// import Avatar from 'avataaars';
 import './Nav.css';
 
 const Nav = () => {
   return (
     <div className='top-nav'>
-      <Avatar
+      {/* <Avatar
         className='block'
         style={{ width: '40px', height: '80px' }}
         avatarStyle=''
@@ -20,7 +20,7 @@ const Nav = () => {
         eyebrowType='Default'
         mouthType='Grimace'
         skinColor='DarkBrown'
-      />
+      /> */}
       <div className='block'>
         <a className='App-link' href='/'>
           Home

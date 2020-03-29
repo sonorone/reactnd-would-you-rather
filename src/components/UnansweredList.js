@@ -11,6 +11,7 @@ const UnansweredList = (props) => {
         {questions.map((e) => (
           <li key={e.id}>
             <ClosedCard
+              id={e.id}
               className='open-card'
               author={users[e.author]}
               optionOne={e.optionOne.text}

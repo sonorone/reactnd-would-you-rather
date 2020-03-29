@@ -1,5 +1,9 @@
+:root {
+  --buttonBorderHoverColor: rgb(150, 185, 224);
+}
+
 .button-shell {
-  border-left: 22px solid rgb(150, 185, 224);
+  border-left: 22px solid var(--buttonBorderHoverColor);
   /* padding: 0rem 8rem; */
   text-align: center;
   margin: 20px;
