@@ -3,8 +3,8 @@ import Button from './Button';
 import Message from './Message';
 import TwoRowsInputForm from './TwoRowsInputForm';
 import { setAuthedUser } from '../actions/authedUser';
-
 import { connect } from 'react-redux';
+
 class Login extends React.Component {
   state = {
     login: 'dmurawiecki'

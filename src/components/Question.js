@@ -3,7 +3,7 @@ import React from 'react';
 import Message from './Message';
 import TwoOptionRadioComponent from './TwoOptionRadioComponent';
 import { addUserAnswer } from '../actions/users';
-import { addQuestionAnswer } from '../actions/questions';
+import { handleAddQuestionAnswer } from '../actions/questions';
 
 import { connect } from 'react-redux';
 class Question extends React.Component {
@@ -19,8 +19,9 @@ class Question extends React.Component {
     const option = e.target.value;
     console.log(userId, questionId, option);
 
-    this.props.dispatch(addUserAnswer({ userId, questionId, option }));
-    this.props.dispatch(addQuestionAnswer({ userId, questionId, option }));
+    this.props.dispatch(
+      handleAddQuestionAnswer({ userId, questionId, option })
+    );
 
     this.setState({
       option: e.target.value

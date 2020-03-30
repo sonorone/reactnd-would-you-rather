@@ -1,4 +1,5 @@
 import { GET_QUESTIONS } from '../actions/questions';
+import { ADD_QUESTION } from '../actions/questions';
 import { ADD_QUESTION_ANSWER } from '../actions/questions';
 
 export default function questions(state = {}, action) {
@@ -9,25 +10,24 @@ export default function questions(state = {}, action) {
         ...action.questions
       };
 
-    // TODO
-    // case ADD_QUESTION:
-    //   return {
-    //     ...state,
-    //     [action.id]: action.question
-    //   };
+    case ADD_QUESTION:
+      const id = action.question.id;
+      return {
+        ...state,
+        [id]: action.question
+      };
 
-    // TODO:
     case ADD_QUESTION_ANSWER:
-      const id = action.answer.questionId;
+      const questionId = action.answer.questionId;
       const votes =
         action.answer.option === 'optionOne'
-          ? state[id].optionOne.votes
-          : state[id].optionTwo.votes;
+          ? state[questionId].optionOne.votes
+          : state[questionId].optionTwo.votes;
 
       return {
         ...state,
-        [id]: {
-          ...state[id],
+        [questionId]: {
+          ...state[questionId],
           [action.answer.option]: {
             votes: [...votes, action.answer.userId]
           }
