@@ -1,38 +1,35 @@
 import React from 'react';
-// import Avatar from 'avataaars';
+import { NavLink } from 'react-router-dom';
 import './Nav.css';
 
 const Nav = () => {
   return (
-    <div className='top-nav'>
-      {/* <Avatar
-        className='block'
-        style={{ width: '40px', height: '80px' }}
-        avatarStyle=''
-        topType='Hat'
-        accessoriesType='Round'
-        hairColor='Blonde'
-        facialHairType='BeardMagestic'
-        facialHairColor='Brown'
-        clotheType='CollarSweater'
-        clotheColor='PastelRed'
-        eyeType='Happy'
-        eyebrowType='Default'
-        mouthType='Grimace'
-        skinColor='DarkBrown'
-      /> */}
+    <nav className='top-nav'>
       <div className='block'>
-        <a className='App-link' href='/'>
+        <NavLink
+          className='App-link'
+          to='/'
+          exact
+          activeClassName='nav-link-active'
+        >
           Home
-        </a>
-        <a className='App-link' href='/leaderboard'>
-          Leaderboard
-        </a>
-        <a className='App-link' href='/new'>
-          New
-        </a>
+        </NavLink>
+        <NavLink
+          className='App-link'
+          to='/leaderboard'
+          activeClassName='nav-link-active'
+        >
+          Leader Board
+        </NavLink>
+        <NavLink
+          className='App-link'
+          to='/new'
+          activeClassName='nav-link-active'
+        >
+          Add Question
+        </NavLink>
       </div>
-    </div>
+    </nav>
   );
 };
 

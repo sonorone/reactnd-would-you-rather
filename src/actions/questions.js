@@ -22,7 +22,7 @@ export function addQuestionAnswer(answer) {
 export function handleAddQuestionAnswer(answer) {
   return (dispatch) => {
     return saveQuestionAnswer(answer)
-      .then((answer) => {
+      .then(() => {
         dispatch(addQuestionAnswer(answer));
       })
       .catch((e) => {

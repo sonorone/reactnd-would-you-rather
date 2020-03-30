@@ -10,10 +10,6 @@ class Home extends React.Component {
     filter: 'Unanswered'
   };
 
-  // componentDidMount() {
-  //   this.props.dispatch(getData());
-  // }
-
   handleOptionChange = (e) => {
     this.setState({
       filter: e.target.value

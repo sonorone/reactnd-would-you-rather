@@ -11,6 +11,6 @@ export function receiveUsers(users) {
 export function addUserAnswer(answer) {
   return {
     type: ADDED_USER_ANSWER,
-    answer // object props: userId, questionId, option
+    answer
   };
 }

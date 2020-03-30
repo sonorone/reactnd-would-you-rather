@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Nav from './Nav';
+import Home from './Home';
 // import Login from './Login';
-// import Home from './Home';
-// import Question from './Question';
 import NewQuestion from './NewQuestion';
+import Question from './Question';
+import Leaderboard from './Leaderboard';
 import { connect } from 'react-redux';
 import { getData } from '../actions/shared';
 
@@ -15,15 +17,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
-        <div className='App-header'>
+      <Router>
+        <div className='App App-header'>
           <Nav />
-          <NewQuestion />
-          {/* <Question /> */}
-          {/* <Home /> */}
-          {/* {this.props.authedUser === null ? <Login /> : <Home />} */}
+          <Route path='/' exact component={Home} />
+          <Route path='/new' component={NewQuestion} />
+          <Route path='/leaderboard' component={Leaderboard} />
+          <Route path='/questions/:id' component={Question} />
         </div>
-      </div>
+      </Router>
     );
   }
 }

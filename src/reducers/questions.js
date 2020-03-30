@@ -18,7 +18,7 @@ export default function questions(state = {}, action) {
       };
 
     case ADD_QUESTION_ANSWER:
-      const questionId = action.answer.questionId;
+      const questionId = action.answer.qid;
       const votes =
         action.answer.option === 'optionOne'
           ? state[questionId].optionOne.votes

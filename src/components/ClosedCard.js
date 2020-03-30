@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Card.css';
 
 function ClosedCard(props) {
   const { id, author, optionOne, optionTwo } = props;
   return (
     <div className='card'>
-      <a href={`/questions/${id}`}>
+      <Link to={`/questions/${id}`}>
         <div className='title'>Would you rather...</div>
         <div className='card-shell card-link'>
           <div className='option border'>{optionOne}</div>
@@ -22,7 +23,7 @@ function ClosedCard(props) {
             src={author.avatarURL}
           ></img>
         </div>
-      </a>
+      </Link>
     </div>
   );
 }
