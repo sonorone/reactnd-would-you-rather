@@ -2,6 +2,7 @@ import React from 'react';
 import Button from './Button';
 import Message from './Message';
 import TwoRowsInputForm from './TwoRowsInputForm';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { handleAddQuestion } from '../actions/questions';
 
@@ -19,7 +20,7 @@ class NewQuestion extends React.Component {
   handleAdd = (e) => {
     e.preventDefault();
 
-    const { dispatch, authedUser, id } = this.props;
+    const { dispatch, authedUser } = this.props;
 
     dispatch(
       handleAddQuestion({
@@ -32,16 +33,15 @@ class NewQuestion extends React.Component {
     this.setState(() => ({
       optionOne: '',
       optionTwo: '',
-      toHome: id ? false : true
+      toHome: true
     }));
   };
 
   render() {
     const { optionOne, optionTwo, toHome } = this.state;
 
-    // TODO: redirect to home if submitted
     if (toHome === true) {
-      //   return <Redirect to='/' />
+      return <Redirect to='/' />;
     }
 
     return (
