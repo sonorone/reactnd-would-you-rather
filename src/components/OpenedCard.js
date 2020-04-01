@@ -1,4 +1,5 @@
 import React from 'react';
+import Face from './Face';
 import './Card.css';
 
 function OpenedCard(props) {
@@ -11,8 +12,8 @@ function OpenedCard(props) {
     optionTwoVotes
   } = props;
   const total = optionOneVotes + optionTwoVotes;
-  const one = (optionOneVotes / total) * 100;
-  const two = (optionTwoVotes / total) * 100;
+  const one = ((optionOneVotes / total) * 100).toFixed(0);
+  const two = ((optionTwoVotes / total) * 100).toFixed(0);
 
   return (
     <div className='card'>
@@ -49,13 +50,7 @@ function OpenedCard(props) {
         <div className='poll-results'>Poll Results</div>
         <div className='author'>Asked by {author.name}</div>
       </div>
-      <div className='face'>
-        <img
-          alt='avatar'
-          style={{ height: '60px', width: '60px' }}
-          src={author.avatarURL}
-        ></img>
-      </div>
+      <Face avatarURL={author.avatarURL} />
     </div>
   );
 }

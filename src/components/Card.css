@@ -56,11 +56,7 @@ a {
 }
 .selected {
   background-color: rgb(191, 240, 252);
-  text-decoration-color: #ee000a;
   font-weight: 900;
-  /* color: white; */
-  text-decoration: underline;
-  text-decoration-style: underline;
 }
 .percentage {
   margin: 1vmin 0vmin;
@@ -73,20 +69,7 @@ a {
   margin-top: 1vmin;
   text-align: center;
 }
-.face {
-  width: 68px;
-  height: 0px;
-  position: relative;
-  margin: 0 auto;
-}
-img {
-  display: block;
-  border-radius: 50%;
-  position: absolute;
-  background-color: rgb(208, 205, 211);
-  bottom: -3vmin;
-  border: 4px solid rgb(191, 240, 252);
-}
+
 .footer {
   font-size: calc(5px + 1vmin);
   font-weight: 700;

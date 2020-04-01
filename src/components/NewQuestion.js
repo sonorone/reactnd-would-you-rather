@@ -45,7 +45,7 @@ class NewQuestion extends React.Component {
     }
 
     return (
-      <form className='App-header'>
+      <form className=''>
         <Message text='Would you rather ...' />
         <TwoRowsInputForm
           optionOne={optionOne}

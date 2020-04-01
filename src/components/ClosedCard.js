@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Face from './Face';
 import './Card.css';
 
 function ClosedCard(props) {
@@ -16,13 +17,7 @@ function ClosedCard(props) {
           <div className='poll-results'></div>
           <div className='author'>Asked by {author.name}</div>
         </div>
-        <div className='face'>
-          <img
-            alt='avatar'
-            style={{ height: '60px', width: '60px' }}
-            src={author.avatarURL}
-          ></img>
-        </div>
+        <Face avatarURL={author.avatarURL} />
       </Link>
     </div>
   );

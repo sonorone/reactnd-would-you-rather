@@ -1,9 +1,10 @@
 import React from 'react';
 import './TwoRowsForm.css';
+import './Card.css';
 
 function TwoRowsInputForm(props) {
   return (
-    <div className='form-row'>
+    <div className='form-row card-shell'>
       <div>
         <input
           id='optionOne'
@@ -11,7 +12,7 @@ function TwoRowsInputForm(props) {
           onChange={props.onChange}
         ></input>
       </div>
-      <div className='optionTwo'>
+      <div className=''>
         <input
           id='optionTwo'
           placeholder={props.optionTwo}

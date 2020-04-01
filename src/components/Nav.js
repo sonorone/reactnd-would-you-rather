@@ -1,11 +1,23 @@
 import React from 'react';
+import Face from './Face';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import './Nav.css';
 
-const Nav = () => {
+const Nav = (props) => {
   return (
     <nav className='top-nav'>
-      <div className='block'>
+      {props.user !== null ? (
+        <div className='block'>
+          <div className='nav-face'>
+            <Face avatarURL={props.user.avatarURL} />
+          </div>
+          <div className='nav-face-text block'>Hi, {props.user.name}</div>
+        </div>
+      ) : (
+        <div className='block'>Hello there!</div>
+      )}
+      <div>
         <NavLink
           className='App-link'
           to='/'
@@ -26,11 +38,13 @@ const Nav = () => {
           to='/new'
           activeClassName='nav-link-active'
         >
-          Add Question
+          New
         </NavLink>
       </div>
     </nav>
   );
 };
-
-export default Nav;
+function mapStateToProps({ authedUser, users }) {
+  return { user: users[authedUser] ? users[authedUser] : null };
+}
+export default connect(mapStateToProps)(Nav);

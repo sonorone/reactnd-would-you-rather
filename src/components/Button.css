@@ -4,12 +4,14 @@
 
 .button-shell {
   border-left: 22px solid var(--buttonBorderHoverColor);
-  /* padding: 0rem 8rem; */
   text-align: center;
   margin: 20px;
   color: white;
   background-color: rgb(47, 47, 48);
-  /* width: 8rem; */
+  display: flex;
+  justify-content: center;
+  font-size: calc(5px + 2vmin);
+  align-self: center;
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
