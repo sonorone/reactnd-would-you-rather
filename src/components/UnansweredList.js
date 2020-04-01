@@ -8,17 +8,21 @@ const UnansweredList = (props) => {
   return (
     <React.Fragment>
       <ul style={{ listStyleType: 'none', paddingInlineStart: '0px' }}>
-        {questions.map((e) => (
-          <li key={e.id}>
-            <ClosedCard
-              id={e.id}
-              className='open-card'
-              author={users[e.author]}
-              optionOne={e.optionOne.text}
-              optionTwo={e.optionTwo.text}
-            />
-          </li>
-        ))}
+        {questions.length ? (
+          questions.map((e) => (
+            <li key={e.id}>
+              <ClosedCard
+                id={e.id}
+                className='open-card'
+                author={users[e.author]}
+                optionOne={e.optionOne.text}
+                optionTwo={e.optionTwo.text}
+              />
+            </li>
+          ))
+        ) : (
+          <p>Seems like you have answered them all... Check Leader Board</p>
+        )}
       </ul>
     </React.Fragment>
   );
