@@ -12,7 +12,7 @@ class Login extends React.Component {
 
   handleLogin = (e) => {
     e.preventDefault();
-    this.props.dispatch(setAuthedUser('dmurawiecki'));
+    this.props.dispatch(setAuthedUser(this.state.login));
   };
 
   render() {

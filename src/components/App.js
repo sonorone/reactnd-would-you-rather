@@ -1,29 +1,49 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Nav from './Nav';
 import Home from './Home';
-// import Login from './Login';
+import Login from './Login';
 import NewQuestion from './NewQuestion';
 import Question from './Question';
 import Leaderboard from './Leaderboard';
-import { connect } from 'react-redux';
+import Error404 from './Error404';
 import { getData } from '../actions/shared';
+import { removeAuthedUser } from '../actions/authedUser';
 
 class App extends Component {
-  componentDidMount() {
-    this.props.dispatch(getData());
+  handleLogout = () => {
+    const { dispatch } = this.props;
+
+    dispatch(removeAuthedUser());
+  };
+  authenticate() {
+    const { authedUser, dispatch } = this.props;
+
+    if (authedUser !== null) {
+      dispatch(getData());
+      return true;
+    }
+    return false;
   }
 
   render() {
     return (
       <Router>
         <div className='App App-header'>
-          <Nav />
-          <Route path='/' exact component={Home} />
-          <Route path='/new' component={NewQuestion} />
-          <Route path='/leaderboard' component={Leaderboard} />
-          <Route path='/questions/:id' component={Question} />
+          <Nav handleLogout={this.handleLogout} />
+          {this.authenticate() === true ? (
+            <Switch>
+              <Route path='/' exact component={Home} />
+              <Route path='/new' component={NewQuestion} />
+              <Route path='/leaderboard' component={Leaderboard} />
+              <Route path='/questions/:id' component={Question} />
+              <Route component={Error404} />
+            </Switch>
+          ) : (
+            <Login />
+          )}
         </div>
       </Router>
     );

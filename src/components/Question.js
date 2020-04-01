@@ -74,7 +74,7 @@ function mapStateToProps({ authedUser, questions, users }, props) {
   return {
     authedUser,
     question: questions ? question : null,
-    author: users[question.author]
+    author: users[question?.author]
   };
 }
 

@@ -41,6 +41,9 @@ const Nav = (props) => {
           New
         </NavLink>
       </div>
+      <div className='logout' onClick={props.handleLogout}>
+        Logut
+      </div>
     </nav>
   );
 };
