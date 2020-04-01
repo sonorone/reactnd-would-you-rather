@@ -110,5 +110,5 @@ input[type='radio']:checked ~ .check::before {
 
 input[type='radio']:checked ~ label {
   background: #ffffff;
-  background-color: #222222;
+  background-color: inherit;
 }
