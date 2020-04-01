@@ -8,15 +8,14 @@ export default function users(state = {}, action) {
         ...action.users
       };
     case ADDED_USER_ANSWER:
-      const userId = action.answer.authedUser;
-      const questionId = action.answer.qid;
+      const { authedUser, qid, answer } = action.answer;
       return {
         ...state,
-        [userId]: {
-          ...state[userId],
+        [authedUser]: {
+          ...state[authedUser],
           answers: {
-            ...state[userId].answers,
-            [questionId]: action.answer.answer
+            ...state[authedUser].answers,
+            [qid]: answer
           }
         }
       };

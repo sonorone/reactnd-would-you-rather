@@ -55,7 +55,7 @@ a {
   font-size: 2vmin;
 }
 .selected {
-  /* background-color: chocolate; */
+  background-color: rgb(191, 240, 252);
   text-decoration-color: #ee000a;
   font-weight: 900;
   /* color: white; */

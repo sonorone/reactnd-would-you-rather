@@ -10,26 +10,39 @@ function OpenedCard(props) {
     optionOneVotes,
     optionTwoVotes
   } = props;
-  const one = (optionOneVotes / (optionOneVotes + optionTwoVotes)) * 100;
-  const two = (optionTwoVotes / (optionOneVotes + optionTwoVotes)) * 100;
+  const total = optionOneVotes + optionTwoVotes;
+  const one = (optionOneVotes / total) * 100;
+  const two = (optionTwoVotes / total) * 100;
 
   return (
     <div className='card'>
       <div className='title'>Would you rather...</div>
       <div className='card-shell'>
-        <div className='option border'>
-          <div className={`${selected === 'optionOne' ? 'selected' : ''}`}>
-            <span className='option-text'>{optionOne}</span>
+        <div
+          className={`option border ${
+            selected === 'optionOne' ? 'selected' : ''
+          }`}
+        >
+          <div className='option-text'>
+            <span className=''>{optionOne}</span>
           </div>
           <div className='percentage'>{one}%</div>
-          <div className='votes'>{optionOneVotes} vote(s)</div>
+          <div className='votes'>
+            {optionOneVotes} vote(s) out of {total}
+          </div>
         </div>
-        <div className='option'>
-          <div className={`${selected === 'optionTwo' ? 'selected' : ''}`}>
+        <div
+          className={`option border ${
+            selected === 'optionTwo' ? 'selected' : ''
+          }`}
+        >
+          <div className='option-text'>
             <span className='option-text'>{optionTwo}</span>
           </div>
           <div className='percentage'>{two}%</div>
-          <div className='votes'>{optionTwoVotes} vote(s)</div>
+          <div className='votes'>
+            {optionTwoVotes} vote(s) out of {total}
+          </div>
         </div>
       </div>
       <div className='footer'>

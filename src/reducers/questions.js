@@ -18,18 +18,19 @@ export default function questions(state = {}, action) {
       };
 
     case ADD_QUESTION_ANSWER:
-      const questionId = action.answer.qid;
+      const { qid, answer, authedUser } = action.answer;
       const votes =
-        action.answer.option === 'optionOne'
-          ? state[questionId].optionOne.votes
-          : state[questionId].optionTwo.votes;
+        action === 'optionOne'
+          ? state[qid].optionOne.votes
+          : state[qid].optionTwo.votes;
 
       return {
         ...state,
-        [questionId]: {
-          ...state[questionId],
-          [action.answer.option]: {
-            votes: [...votes, action.answer.userId]
+        [qid]: {
+          ...state[qid],
+          [answer]: {
+            ...state[qid][answer],
+            votes: state[qid][answer].votes.concat([authedUser]) //[...votes, authedUser]
           }
         }
       };
