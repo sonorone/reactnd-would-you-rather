@@ -1,5 +1,6 @@
 import { saveQuestion } from '../utils/api';
 import { saveQuestionAnswer } from '../utils/api';
+import { addUserQuestion } from './users';
 
 export const GET_QUESTIONS = 'GET_QUESTIONS';
 export const ADD_QUESTION = 'ADD_QUESTION';
@@ -45,6 +46,7 @@ export function handleAddQuestion(question) {
     return saveQuestion(question)
       .then((question) => {
         dispatch(addQuestion(question));
+        dispatch(addUserQuestion(question));
       })
       .catch((e) => {
         console.warn('Error in handleAddQuestion: ', e);
