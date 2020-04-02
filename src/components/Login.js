@@ -19,7 +19,7 @@ class Login extends React.Component {
     const { login, password } = this.state;
     return (
       <form className='App-header'>
-        <Message text='Sign in to WWR' />
+        <Message text='Sign in to Would You Rather' />
         <TwoRowsInputForm optionOne={login} optionTwo={password} />
         <Button text='Login' handleClick={this.handleLogin} />
       </form>
