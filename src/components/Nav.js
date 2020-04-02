@@ -41,9 +41,13 @@ const Nav = (props) => {
           New
         </NavLink>
       </div>
-      <div className='logout' onClick={props.handleLogout}>
-        Logut
-      </div>
+      {props?.user !== null ? (
+        <div className='logout' onClick={props.handleLogout}>
+          Logut
+        </div>
+      ) : (
+        <div></div>
+      )}
     </nav>
   );
 };
