@@ -35,7 +35,7 @@ const Nav = (props) => {
         </NavLink>
         <NavLink
           className='App-link'
-          to='/new'
+          to='/add'
           activeClassName='nav-link-active'
         >
           New

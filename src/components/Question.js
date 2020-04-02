@@ -34,15 +34,17 @@ class Question extends React.Component {
 
     if (isAnswered) {
       return (
-        <OpenedCard
-          className='open-card'
-          author={author}
-          selected={author.answers[question.id]}
-          optionOne={question.optionOne.text}
-          optionOneVotes={question.optionOne.votes.length}
-          optionTwo={question.optionTwo.text}
-          optionTwoVotes={question.optionTwo.votes.length}
-        />
+        <React.Fragment>
+          <OpenedCard
+            className='open-card'
+            author={author}
+            selected={author.answers[question.id]}
+            optionOne={question.optionOne.text}
+            optionOneVotes={question.optionOne.votes.length}
+            optionTwo={question.optionTwo.text}
+            optionTwoVotes={question.optionTwo.votes.length}
+          />
+        </React.Fragment>
       );
     }
 

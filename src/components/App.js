@@ -36,7 +36,7 @@ class App extends Component {
           {this.authenticate() === true ? (
             <Switch>
               <Route path='/' exact component={Home} />
-              <Route path='/new' component={NewQuestion} />
+              <Route path='/add' component={NewQuestion} />
               <Route path='/leaderboard' component={Leaderboard} />
               <Route path='/questions/:id' component={Question} />
               <Route component={Error404} />

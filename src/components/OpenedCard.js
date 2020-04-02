@@ -27,7 +27,7 @@ function OpenedCard(props) {
           <div className='option-text'>
             <span className=''>{optionOne}</span>
           </div>
-          <div className='percentage'>{one}%</div>
+          <div className='percentage'>{isNaN(one) ? 0 : one}%</div>
           <div className='votes'>
             {optionOneVotes} vote(s) out of {total}
           </div>
@@ -40,7 +40,7 @@ function OpenedCard(props) {
           <div className='option-text'>
             <span className='option-text'>{optionTwo}</span>
           </div>
-          <div className='percentage'>{two}%</div>
+          <div className='percentage'>{isNaN(two) ? 0 : two}%</div>
           <div className='votes'>
             {optionTwoVotes} vote(s) out of {total}
           </div>

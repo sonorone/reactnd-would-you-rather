@@ -1,13 +1,18 @@
 import React from 'react';
 import Button from './Button';
 import Message from './Message';
-import TwoRowsInputForm from './TwoRowsInputForm';
 import { setAuthedUser } from '../actions/authedUser';
 import { connect } from 'react-redux';
 
 class Login extends React.Component {
   state = {
-    login: 'dmurawiecki'
+    login: 'kharo'
+  };
+
+  handleChange = (e) => {
+    this.setState({
+      login: e.target.value
+    });
   };
 
   handleLogin = (e) => {
@@ -16,11 +21,20 @@ class Login extends React.Component {
   };
 
   render() {
-    const { login, password } = this.state;
     return (
       <form className='App-header'>
         <Message text='Sign in to Would You Rather' />
-        <TwoRowsInputForm optionOne={login} optionTwo={password} />
+        {/* <TwoRowsInputForm optionOne={login} optionTwo={password} /> */}
+        <div className='form-row card-shell'>
+          <label htmlFor='users'>Select user:</label>
+
+          <select id='users' onChange={this.handleChange}>
+            <option value='kharo'>Kathy</option>
+            <option value='dmurawiecki'>Damian</option>
+            <option value='johndoe'>John</option>
+          </select>
+        </div>
+
         <Button text='Login' handleClick={this.handleLogin} />
       </form>
     );
