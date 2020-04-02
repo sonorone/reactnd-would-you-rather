@@ -10,7 +10,8 @@ class NewQuestion extends React.Component {
   state = {
     optionOne: '',
     optionTwo: '',
-    toHome: false
+    toHome: false,
+    isDisabled: false
   };
 
   handleChange = (e) => {
@@ -21,6 +22,12 @@ class NewQuestion extends React.Component {
     e.preventDefault();
 
     const { dispatch, authedUser } = this.props;
+    const { optionOne, optionTwo } = this.state;
+
+    if (optionOne === '' || optionTwo === '') {
+      alert('Fields cannot be empty');
+      return;
+    }
 
     dispatch(
       handleAddQuestion({
